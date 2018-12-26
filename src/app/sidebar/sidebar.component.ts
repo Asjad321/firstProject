@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router,NavigationStart,NavigationError, NavigationEnd } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  currentUrl: string;
+  startUrl: string;
 
+  constructor(private router: Router) {   
+    router.events.subscribe((lastSegment: NavigationEnd) =>{
+      this.currentUrl = this.router.url;
+    });      
+  }
+  
   ngOnInit() {
   }
 

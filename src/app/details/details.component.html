@@ -1,3 +1,11 @@
-<p>
-  details works!
-</p>
+<h1>{{ user$.name }}</h1>
+<ul>
+  <li><strong>Username:</strong> {{ user$.username }}</li>
+  <li><strong>Email:</strong> {{ user$.email }}</li>
+  <li><strong>Phone:</strong> {{ user$.phone }}</li>
+  <li><strong>Company:</strong> {{user$.company.name}}</li>
+  <li><strong>Streen:</strong> {{user$.address.street}}</li>
+  <li><strong>City:</strong> {{user$.address.city}}</li>
+  <li><strong>Zipcode:</strong> {{user$.address.zipcode}}</li>
+      
+</ul>

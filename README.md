@@ -29,6 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## To run the project 
 ng serve -o
 
-## if you found "could not find module @angular-devkit/build-angular" issue 
-npm install --save-dev @angular-devkit/build-angular
+## If you found "could not find module @angular-devkit/build-angular" issue, Run following command
+npm install --save-dev @angular-devkit/build-angular and then 
 npm update

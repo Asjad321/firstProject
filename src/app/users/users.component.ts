@@ -41,9 +41,10 @@ users$: Object;
     this.spinner.show();
     this.data.getUsers().subscribe(data => {
         this.users$ = data;
+      //  console.log("==============="+JSON.stringify(data));
         this.spinner.hide();//hide the spinner if success
       },
-      error => {this.spinner.hide();} //hide the spinner in case of error
+      error => { console.log('Errors!'); this.spinner.hide();} //hide the spinner in case of error
     );
   }
 

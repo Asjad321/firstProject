@@ -3,6 +3,7 @@ import {DataService} from '../data.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { resolve } from 'url';
 
 @Component({
   selector: 'app-details',
@@ -18,11 +19,15 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
       /** spinner starts on init */
       this.spinner.show();
-      this.data.getUser(this.user$).subscribe(data => {
-          this.user$ = data;
-          this.spinner.hide();//hide the spinner if success
+      this.data.getUser(this.user$).subscribe((data) => {
+          this.user$ = data; 
+         // console.log(data);
+          //if(typeof data === 'object'){
+            this.spinner.hide();//hide the spinner if success
+          //}
+          
         },
-        error => {this.spinner.hide();} //hide the spinner in case of error 
+        (error) => {this.spinner.hide();} //hide the spinner in case of error 
       );     
   }
 

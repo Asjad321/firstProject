@@ -1,11 +1,12 @@
-<h1>Users</h1>
+<h1>Company Details</h1>
 
 <ul [@listStagger]="users$">
   <li *ngFor="let user of users$">
-    <a routerLink="/details/{{user.id}}">{{user.name}}</a>
+    <a routerLink="/details/{{user.csr_id}}">{{user.CIN}}</a>
     <ul>
-      <li>Email: {{user.email}}</li>      
-      <li>Website: <a href="http://{{user.website}}">{{user.website}}</a></li>
+      <li>Company: {{user.compname}}</li>      
+      <!-- <li>Website: <a href="http://{{user.website}}">{{user.website}}</a></li> -->
+      <li>Financial Year: {{user.YearOfFiling}}</li>
     </ul>
   </li>  
 </ul>
